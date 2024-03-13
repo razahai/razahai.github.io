@@ -1,0 +1,23 @@
+<nav class="w-full flex justify-between py-2 border-b-[1px] border-gray-600">
+    <div class="w-2/3 h-20 flex items-center">
+        {{- with .Site.Params.header_image -}}
+            <img class="w-1/3 h-full object-contain mr-1" src="{{ . | absURL }}">
+        {{- end -}}
+        <div class="text-sm">
+            <span class="block">{{ .Site.Params.title }}</span>
+            <a class="block link" href="mailto:{{ .Site.Data.links.email }}">email</a>
+            <span class="block">{{ .Site.Params.description_stylized }}</span>
+        </div>
+    </div>
+    <div class="text-sm w-1/3 h-20 flex flex-col justify-center items-end">
+          <ul class="flex flex-col items-end">
+              {{- range .Site.Menus.main -}}
+                  <li><a class="link" href="{{ .URL | absURL }}">{{ .Name }}</a></li>
+              {{- end -}}
+          </ul>
+          <div>
+              <a class="{{ if .Prev }} link {{ else }} cursor-not-allowed text-gray-300 {{ end }} mr-3" href="{{ .RelPermalink }}"><i class="fa-solid fa-angle-left"></i></a>
+              <a class="{{ if .Next }} link {{ else }} cursor-not-allowed text-gray-300 {{ end }}" href="{{ .RelPermalink }}"><i class="fa-solid fa-angle-right"></i></a>
+          </div>
+    </div>
+</nav>

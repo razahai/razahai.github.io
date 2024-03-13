@@ -1,0 +1,30 @@
+baseURL = "https://razahai.github.io/"
+languageCode = 'en-us'
+title = "razahai"
+
+enableRobotsTXT = true
+
+defaultContentLanguage = "en"
+disableKinds = ['taxonomy', 'term']
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[menus]
+    [[menus.main]]
+        name = "about"
+        url = "/about/"
+        weight = 10
+    [[menus.main]]
+        name = "work"
+        url = "/work/"
+        weight = 20
+
+[params]
+title = "razahai"
+description = "raza's personal site - cs, space, books, etc."
+description_stylized = "cs • space • books"
+header_image = "images/hotdog.png"
+
+[params.author]
+name = "raza"

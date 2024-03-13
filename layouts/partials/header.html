@@ -16,8 +16,8 @@
               {{- end -}}
           </ul>
           <div>
-              <a class="{{ if .Prev }} link {{ else }} cursor-not-allowed text-gray-300 {{ end }} mr-3" href="{{ .RelPermalink }}"><i class="fa-solid fa-angle-left"></i></a>
-              <a class="{{ if .Next }} link {{ else }} cursor-not-allowed text-gray-300 {{ end }}" href="{{ .RelPermalink }}"><i class="fa-solid fa-angle-right"></i></a>
+              <a class="{{ if .Prev }} link {{ else }} cursor-not-allowed text-gray-300 {{ end }} mr-3" href="{{ if .Prev }}{{ .Prev.RelPermalink }}{{ end }}"><i class="fa-solid fa-angle-left"></i></a>
+              <a class="{{ if .Next }} link {{ else }} cursor-not-allowed text-gray-300 {{ end }}" href="{{ if .Next }}{{ .Next.RelPermalink }}{{ end }}"><i class="fa-solid fa-angle-right"></i></a>
           </div>
     </div>
 </nav>

@@ -5,7 +5,8 @@
   "scripts": {
     "build-css": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css",
     "watch-css": "npx tailwindcss --watch -i ./assets/css/input.css -o ./assets/css/output.css",
-    "start": "npm run build-css && concurrently \"npm run watch-css\" \"hugo server\""
+    "start": "npm run build-css && concurrently \"npm run watch-css\" \"hugo server\"",
+    "build": "npm run build-css && hugo --minify --gc"
   },
   "devDependencies": {
     "concurrently": "^9.1.0",

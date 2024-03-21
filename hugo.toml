@@ -1,0 +1,11 @@
+baseURL = "https://razahai.github.io"
+languageCode = "en-us"
+title = "razahai"
+
+enableRobotsTXT = true
+
+defaultContentLanguage = "en"
+disableKinds = ["taxonomy", "term"]
+
+[markup.goldmark.renderer]
+unsafe = true

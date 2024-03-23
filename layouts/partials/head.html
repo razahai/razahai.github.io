@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{ .Site.Title }}{{ with .Title }} – {{ . }}{{ end }}</title>
+
+{{/* stolen https://github.com/maolonglong/hugo-simple/blob/ed4be5c228d660cba2155d4ee8ad7fd6bb0e016e/layouts/partials/seo_tags.html */}}
+<meta name="title" content="{{ .Site.Title }}{{ with .Title }} – {{ . }}{{ end }}"/>
+<meta name="description" content="
+    {{ with .Description -}}
+        {{ . }}
+    {{- else -}}
+        {{ if .IsPage -}}
+            {{ .Summary }}
+        {{- else -}}
+            {{ with .Site.Params.description }}
+                {{ . }}
+            {{ end }}
+        {{- end }}
+    {{- end }}
+"/>
+<meta name="keywords" content="
+    {{ if .IsPage -}}
+        {{ range $index, $tag := .Params.tags }}
+            {{ $tag }},
+        {{ end }}]
+    {{- end -}}
+"/>
+{{ with .Site.Params.author.name }}
+    <meta name="author" content="{{ . }}" />
+{{ end }}
+
+{{/* stolen https://github.com/joeroe/risotto/blob/058d18503c151056c5e9fc71259d155b112b9dd1/layouts/partials/head.html#L9C1-L9C268*/}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="canonical" href="{{ .Permalink }}">
+{{ $css := resources.Get "css/main.css" | minify }}
+<link rel="stylesheet" href="{{ $css.Permalink }}" media="screen">
+
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
+{{ template "_internal/schema.html" . }}

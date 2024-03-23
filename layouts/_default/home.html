@@ -1,0 +1,47 @@
+{{ define "main" }}
+    <h1 style="margin-bottom: .5rem;">{{ .Site.Params.title }}</h1>
+    <div>
+        <a class="link" href="{{ .Site.Data.links.twitter }}">
+            twitter
+        </a>
+        <a class="link" href="{{ .Site.Data.links.discord }}">
+            discord
+        </a>
+        <a class="link" href="{{ .Site.Data.links.instagram }}">
+            instagram
+        </a>
+        <a class="link" href="{{ .Site.Data.links.github }}">
+            github
+        </a>
+    </div>
+    <p>{{ .Site.Params.short_description }}</p>
+    <img
+        src="images/catputer.png"
+        style="width: 14rem; height: 14rem; object-fit: cover; margin-top: .5rem; margin-bottom: 1.5rem;"
+    />
+    <div>
+        <span>contact via email:</span>
+        <table style="margin-top: .5rem;">
+            <thead>
+                <tr>
+                    <th>component</th>
+                    <th>value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>username</td>
+                    <td>razahaidev</td>
+                </tr>
+                <tr>
+                    <td>delimiter</td>
+                    <td>@</td>
+                </tr>
+                <tr>
+                    <td>domain</td>
+                    <td>gmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{{ end }}

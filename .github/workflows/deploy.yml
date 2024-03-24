@@ -36,17 +36,12 @@ jobs:
         with:
           hugo-version: '0.134.1'
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
       - name: Build
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
           TZ: America/New_York
-        run: npm run build
+        run: hugo --minify
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3

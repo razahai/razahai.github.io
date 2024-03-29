@@ -12,7 +12,6 @@ unsafe = true
 
 [params]
 title = "razahai"
-short_description = "engineer"
 
 [params.author]
 name = "raza"

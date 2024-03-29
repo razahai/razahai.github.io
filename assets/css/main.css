@@ -33,12 +33,6 @@ th {
     text-decoration: none;
 }
 
-.tooltip {
-    visibility: hidden;
-    position: absolute;
-}
-
-.has-tooltip:hover .tooltip {
-    visibility: visible;
-    z-index: 99;
+hr {
+    border-top: 1px solid black;
 }
